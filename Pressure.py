@@ -7,7 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.neural_network import MLPRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
-#from sklearn.datasets import load_diabetes, load_boston
+
 
 #---------------------------------#
 st.set_page_config(page_title='The Smart Proxy App',
@@ -120,7 +120,7 @@ if uploaded_file is not None:
      #Getting Tier One Cells                        
     tier1 = []
 
-    list_Ones = ('N_Porosity', 'N_Permeability', 'N_Initial_Pressure', 'N_(t-1)Pressure', 'N_(t-1)Gas_Saturation', 'N_Grid Top', 'N_Grid Thickness', 'S_Porosity', 'S_Permeability', 'S_Initial_Pressure', 'S_(t-1)Pressure', 'S_(t-1)Gas_Saturation', 'S_Grid Top', 'S_Grid Thickness', 'E_Porosity', 'E_Permeability', 'E_Initial_Pressure', 'E_(t-1)Pressure', 'E_(t-1)Gas_Saturation', 'E_Grid Top', 'E_Grid Thickness', 'W_Porosity', 'W_Permeability', 'W_Initial_Pressure', 'W_(t-1)Pressure', 'W_(t-1)Gas_Saturation', 'W_Grid Top', 'W_Grid Thickness', 'U_Porosity', 'U_Permeability', 'U_Initial_Pressure', 'U_(t-1)Pressure', 'U_(t-1)Gas_Saturation', 'U_Grid Top', 'U_Grid Thickness', 'B_Porosity', 'B_Permeability', 
+    list_Ones = ('I', 'J', 'K','N_Porosity', 'N_Permeability', 'N_Initial_Pressure', 'N_(t-1)Pressure', 'N_(t-1)Gas_Saturation', 'N_Grid Top', 'N_Grid Thickness', 'S_Porosity', 'S_Permeability', 'S_Initial_Pressure', 'S_(t-1)Pressure', 'S_(t-1)Gas_Saturation', 'S_Grid Top', 'S_Grid Thickness', 'E_Porosity', 'E_Permeability', 'E_Initial_Pressure', 'E_(t-1)Pressure', 'E_(t-1)Gas_Saturation', 'E_Grid Top', 'E_Grid Thickness', 'W_Porosity', 'W_Permeability', 'W_Initial_Pressure', 'W_(t-1)Pressure', 'W_(t-1)Gas_Saturation', 'W_Grid Top', 'W_Grid Thickness', 'U_Porosity', 'U_Permeability', 'U_Initial_Pressure', 'U_(t-1)Pressure', 'U_(t-1)Gas_Saturation', 'U_Grid Top', 'U_Grid Thickness', 'B_Porosity', 'B_Permeability', 
                  'B_Initial_Pressure', 'B_(t-1)Pressure', 'B_(t-1)Gas_Saturation', 'B_Grid Top', 'B_Grid Thickness', )
     for items in list_Ones:
         tier1.append (items)
@@ -131,7 +131,7 @@ if uploaded_file is not None:
     #---------------------------------#
     # Get and Display Tier2 Cells
     tier2 = []
-    list_Twos = ('UN_Porosity', 'UN_Permeability', 'UN_Initial_Pressure', 'UN_(t-1)Pressure', 'UN_(t-1)Gas_Saturation', 'UN_Grid Top', 'UN_Grid Thickness', 'US_Porosity', 'US_Permeability', 'US_Initial_Pressure', 'US_(t-1)Pressure', 'US_(t-1)Gas_Saturation', 'US_Grid Top', 'US_Grid Thickness', 'UE_Porosity', 'UE_Permeability', 'UE_Initial_Pressure', 'UE_(t-1)Pressure', 'UE_(t-1)Gas_Saturation', 'UE_Grid Top', 'UE_Grid Thickness', 'UW_Porosity', 'UW_Permeability', 'UW_Initial_Pressure', 'UW_(t-1)Pressure', 'UW_(t-1)Gas_Saturation', 'UW_Grid Top', 'UW_Grid Thickness', 
+    list_Twos = ('I', 'J', 'K','UN_Porosity', 'UN_Permeability', 'UN_Initial_Pressure', 'UN_(t-1)Pressure', 'UN_(t-1)Gas_Saturation', 'UN_Grid Top', 'UN_Grid Thickness', 'US_Porosity', 'US_Permeability', 'US_Initial_Pressure', 'US_(t-1)Pressure', 'US_(t-1)Gas_Saturation', 'US_Grid Top', 'US_Grid Thickness', 'UE_Porosity', 'UE_Permeability', 'UE_Initial_Pressure', 'UE_(t-1)Pressure', 'UE_(t-1)Gas_Saturation', 'UE_Grid Top', 'UE_Grid Thickness', 'UW_Porosity', 'UW_Permeability', 'UW_Initial_Pressure', 'UW_(t-1)Pressure', 'UW_(t-1)Gas_Saturation', 'UW_Grid Top', 'UW_Grid Thickness', 
                  'BN_Porosity', 'BN_Permeability', 'BN_Initial_Pressure', 'BN_(t-1)Pressure', 'BN_(t-1)Gas_Saturation', 'BN_Grid Top', 'BN_Grid Thickness', 'BS_Porosity', 'BS_Permeability', 'BS_Initial_Pressure', 'BS_(t-1)Pressure', 'BS_(t-1)Gas_Saturation', 'BS_Grid Top',
                  'BS_Grid Thickness', 'BE_Porosity', 'BE_Permeability', 'BE_Initial_Pressure', 'BE_(t-1)Pressure', 'BE_(t-1)Gas_Saturation', 'BE_Grid Top', 'BE_Grid Thickness', 'BW_Porosity', 'BW_Permeability', 'BW_Initial_Pressure', 'BW_(t-1)Pressure', 'BW_(t-1)Gas_Saturation', 'BW_Grid Top', 'BW_Grid Thickness', 'NE_Porosity', 'NE_Permeability', 'NE_Initial_Pressure', 'NE_(t-1)Pressure', 'NE_(t-1)Gas_Saturation', 'NE_Grid Top', 'NE_Grid Thickness', 'NW_Porosity', 'NW_Permeability', 'NW_Initial_Pressure', 'NW_(t-1)Pressure',
                  'NW_(t-1)Gas_Saturation', 'NW_Grid Top', 'NW_Grid Thickness', 'SE_Porosity', 'SE_Permeability', 'SE_Initial_Pressure', 'SE_(t-1)Pressure', 'SE_(t-1)Gas_Saturation', 'SE_Grid Top', 'SE_Grid Thickness', 'SW_Porosity', 'SW_Permeability', 'SW_Initial_Pressure', 'SW_(t-1)Pressure', 'SW_(t-1)Gas_Saturation', 'SW_Grid Top', 'SW_Grid Thickness')
@@ -146,7 +146,7 @@ if uploaded_file is not None:
     
     
     tier3 = []
-    list3 = ('UNE_Porosity', 'UNE_Permeability', 'UNE_Initial_Pressure', 'UNE_(t-1)Pressure', 'UNE_(t-1)Gas_Saturation', 
+    list3 = ('I', 'J', 'K','UNE_Porosity', 'UNE_Permeability', 'UNE_Initial_Pressure', 'UNE_(t-1)Pressure', 'UNE_(t-1)Gas_Saturation', 
              'UNE_Grid Top', 'UNE_Grid Thickness', 'USE_Porosity', 'USE_Permeability', 'USE_Initial_Pressure', 'USE_(t-1)Pressure', 
              'USE_(t-1)Gas_Saturation', 'USE_Grid Top', 'USE_Grid Thickness', 'UNW_Porosity', 'UNW_Permeability', 'UNW_Initial_Pressure', 
              'UNW_(t-1)Pressure', 'UNW_(t-1)Gas_Saturation', 'UNW_Grid Top', 'UNW_Grid Thickness', 'USW_Porosity', 'USW_Permeability', 'USW_Initial_Pressure',
